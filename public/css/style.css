@@ -1,0 +1,85 @@
+html {
+    height: 100vh;
+}
+body {
+    height: 100vh;
+    padding-top: 4.5rem;
+}
+.homeicons {
+    text-align: center;
+    padding-top: 30px;
+}
+.breadcrumbs {
+    border-bottom: #03226a 2px solid;
+    margin-bottom: 15px;
+}
+.breadcrumbsicon {
+    color: #023dc8;
+    font-size: 2em;
+    font-weight: 900;
+}
+.breadcrumbstext {
+    font-size: xx-large;
+    font-weight: bold;
+}
+.homecardtext {
+    text-align: center;
+}
+.homecard {
+    max-width: 18rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: all 0.5s ease;
+    border: #0232a0 2px solid;
+}
+.homecard:hover {
+    transform: scale(1.025);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 10px;
+}
+.card-title {
+    color: #023dc8;
+}
+.navbar {
+    background-color: rgb(3, 34, 106);
+}
+.navbar-brand {
+    color: white;
+    font-weight: bolder;
+}
+
+.listtablehead {
+    background-color: rgb(3, 34, 106);
+    color: white;
+    font-weight: bolder;
+}
+.alert {
+    z-index: 200;
+    position: absolute;
+    right: 23px;
+}
+.posinput {
+    border: rgb(3, 34, 106) 2px solid;
+}
+
+.posinputlable {
+    color: rgb(3, 34, 106);
+    font-weight: bolder;
+}
+.hr {
+    margin-top: 7px;
+    border: rgb(233, 233, 233) 0.1px solid;
+}
+.formbutton {
+    width: 100%;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    background-color: #023dc8;
+    font-weight: 600;
+}
+.formbuttonsecond {
+    width: 100%;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    background-color: #b6b6b6;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+}

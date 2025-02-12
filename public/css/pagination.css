@@ -1,0 +1,104 @@
+/* Laravel Tailwind Pagination CSS */
+
+nav[role="navigation"] {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+nav[role="navigation"] span.relative.z-0.inline-flex {
+    display: flex;
+    align-items: center;
+}
+
+/* Pagination links */
+nav[role="navigation"] a.relative.inline-flex,
+nav[role="navigation"] span.relative.inline-flex {
+    padding: 0.5rem 1rem;
+    margin: 0 -1px;
+    position: relative;
+    color: #3b82f6;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+/* Hover state for links */
+nav[role="navigation"] a.relative.inline-flex:hover {
+    background-color: #f3f4f6;
+    color: #1d4ed8;
+    z-index: 1;
+}
+
+/* Active/Current page */
+nav[role="navigation"] span[aria-current="page"] span {
+    background-color: #3b82f6;
+    color: #ffffff;
+    border-color: #3b82f6;
+    z-index: 1;
+}
+
+/* Remove Previous/Next buttons */
+nav[role="navigation"] a[rel="prev"],
+nav[role="navigation"] a[rel="next"] {
+    display: none !important;
+}
+
+/* Rounded corners */
+nav[role="navigation"] a.rounded-l-md {
+    border-top-left-radius: 0.375rem;
+    border-bottom-left-radius: 0.375rem;
+}
+
+nav[role="navigation"] a.rounded-r-md {
+    border-top-right-radius: 0.375rem;
+    border-bottom-right-radius: 0.375rem;
+}
+
+/* SVG arrows */
+nav[role="navigation"] svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+/* Results text */
+nav[role="navigation"] p.text-sm {
+    color: #4b5563;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    nav[role="navigation"] a.relative.inline-flex,
+    nav[role="navigation"] span.relative.inline-flex {
+        background-color: #1f2937;
+        border-color: #374151;
+        color: #9ca3af;
+    }
+
+    nav[role="navigation"] a.relative.inline-flex:hover {
+        background-color: #374151;
+        color: #e5e7eb;
+    }
+
+    nav[role="navigation"] span[aria-current="page"] span {
+        background-color: #3b82f6;
+        color: #ffffff;
+    }
+
+    nav[role="navigation"] p.text-sm {
+        color: #9ca3af;
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 640px) {
+    nav[role="navigation"] .sm\:hidden {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    nav[role="navigation"] .sm\:flex-1 {
+        display: none;
+    }
+}
