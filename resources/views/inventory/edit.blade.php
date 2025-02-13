@@ -191,8 +191,11 @@ function setPrimaryImage(imageId) {
     const token = document.querySelector('meta[name="csrf-token"]').content;
 
     console.log('Setting primary image:', imageId); // Debug log
+const primaryImageUrl = "{{ route('inventory.images.primary', ['image' => ':imageId']) }}";
 
-    fetch(`/inventory/images/${imageId}/primary`, {
+
+const setPrimaryUrl = primaryImageUrl.replace(':imageId', imageId);
+fetch(setPrimaryUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -230,8 +233,13 @@ function setPrimaryImage(imageId) {
 }
 
 function deleteImage(imageId) {
-    if (confirm('Are you sure you want to delete this image?')) {
-        fetch(`/inventory/images/${imageId}`, {
+    if (confirm('Are you sure you want to delete this image?')) { 
+
+// Then in your fetch call
+const deleteImageUrl = "{{ route('inventory.images.delete', ['image' => ':imageId']) }}";
+const deleteUrl = deleteImageUrl.replace(':imageId', imageId);
+
+   fetch(deleteUrl, {
                 method: 'DELETE',
                 headers: {
                     'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content

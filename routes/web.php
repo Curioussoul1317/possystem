@@ -65,11 +65,11 @@ Route::middleware(['auth'])->group(function () {
         Route::post('{inventory}/images/primary', )
             ->name('images.primary');
  
-        Route::post('images/{image}/primary', [InventoryController::class, 'setPrimary'])
-            ->name('images.primary');
+     Route::post('images/{image}/primary', [InventoryController::class, 'setPrimary'])
+        ->name('images.primary');
             
-        Route::delete('images/{image}', [InventoryController::class, 'deleteImage'])
-            ->name('images.delete');
+    Route::delete('images/{image}', [InventoryController::class, 'deleteImage'])
+        ->name('images.delete');
             
         Route::post('{inventory}/stock/adjust', [InventoryController::class, 'adjustStock'])
             ->name('stock.adjust');

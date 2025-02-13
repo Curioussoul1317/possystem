@@ -226,7 +226,7 @@ fetch(`${searchUrl}?search=${encodeURIComponent(query)}`, {
     color: #5d3636;
     padding: 5px;">
                 <div class="col" style="margin: auto;"> 
-                    ${product.image ? `<img src="${product.image}" class="avatar me-2">` : '<span class="avatar me-2" style="background-image: url(./static/avatars/008f.jpg)"></span>'} 
+                    ${product.image ? `<img src="${product.image}" class="avatar me-2" style="height: 50px;">` : '<span class="avatar me-2" style="background-image: url(./static/avatars/008f.jpg)"></span>'} 
                 </div>
                 <div class="col" style="margin: auto;">${product.name}</div>
                 <div class="col" style="margin: auto;">Mvr${product.price}</div>
@@ -394,8 +394,8 @@ fetch(`${searchUrl}?search=${encodeURIComponent(query)}`, {
           unit_price: item.price,
         })),
       };
-
-      fetch('/sales', {
+const storeUrl = "{{ route('sales.store') }}";
+fetch(storeUrl, { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -424,5 +424,15 @@ fetch(`${searchUrl}?search=${encodeURIComponent(query)}`, {
     });
   });
 </script>
+
+<script>
+    document.getElementById('product-search').addEventListener('keypress', function(event) {
+    // Prevent form submission on Enter key
+    if (event.key === 'Enter') {
+        event.preventDefault(); 
+        let barcodeValue = this.value; 
+    }
+});
+    </script>
 
 @endsection
