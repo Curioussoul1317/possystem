@@ -394,6 +394,7 @@ fetch(`${searchUrl}?search=${encodeURIComponent(query)}`, {
           unit_price: item.price,
         })),
       };
+      const invoiceUrl = "{{ route('sales.invoice', ['sale' => ':saleId']) }}";
 const storeUrl = "{{ route('sales.store') }}";
 fetch(storeUrl, { 
         method: 'POST',
@@ -412,7 +413,7 @@ fetch(storeUrl, {
         })
         .then(data => {
           if (data.success) {
-            window.location.href = `/sales/${data.sale.id}/invoice`;
+            window.location.href = invoiceUrl.replace(':saleId', data.sale.id);
           } else {
             alert(data.message || 'Error processing sale');
           }
