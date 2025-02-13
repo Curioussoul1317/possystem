@@ -197,7 +197,8 @@ box-shadow: 2px 10px 21px 1px rgba(0,0,0,0.33); padding: 20px;">
         return;
       }
       searchTimeout = setTimeout(() => {
-      fetch(`/sales/search/products?search=${encodeURIComponent(query)}`, {
+const searchUrl = "{{ route('search.products') }}"; 
+fetch(`${searchUrl}?search=${encodeURIComponent(query)}`, {
     headers: {
         'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
         'Accept': 'application/json'
