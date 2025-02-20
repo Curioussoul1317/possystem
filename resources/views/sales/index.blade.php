@@ -188,7 +188,7 @@
                                         Mrf {{ number_format($sale->total, 2) }}
                                     </td>
                                       <td>
-                                         Mrf {{ number_format((float)$sale->total - (float)$sale->total_cost, 2) }} 
+                                      <strong>   Mrf {{ number_format((float)$sale->total - (float)$sale->total_cost, 2) }} <strong>
                                     </td>
                                     <td>
                                         <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full 
