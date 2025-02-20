@@ -96,7 +96,7 @@
         <tr>
             <td> <strong> {{ $brand->name }}</strong></td>
             <td class="text-secondary">
-                {{ $brand->products_count ?? 0 }}
+                {{ $brand->products_count ?? 0 }} 
             </td>
             <td>
                 <div class="btn-group" role="group" aria-label="Basic example">

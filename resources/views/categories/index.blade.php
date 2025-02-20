@@ -97,7 +97,7 @@
         <tr>
             <td><strong>{{ $category->name }}</strong></td>
             <td class="text-secondary">
-                {{ $category->products_count ?? 0 }}
+                {{ $category->products_count ?? 0 }} 
             </td>
             <td>
                 <div class="btn-group" role="group" aria-label="Basic example">

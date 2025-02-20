@@ -188,14 +188,14 @@
                                         Mrf {{ number_format($sale->total, 2) }}
                                     </td>
                                       <td>
-                                        Mrf {{ number_format($sale->total, 2)-number_format($sale->total_cost, 2) }}
+                                         Mrf {{ number_format((float)$sale->total - (float)$sale->total_cost, 2) }} 
                                     </td>
                                     <td>
                                         <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full 
                                        {{ $sale->payment_status === 'paid' ? 'bg-green-100 text-green-800' : 
                                           ($sale->payment_status === 'voided' ? 'bg-red-100 text-red-800' : 
                                            'bg-yellow-100 text-yellow-800') }}">
-                                            {{ ucfirst($sale->payment_status) }}
+                                            {{ ucfirst($sale->payment_status) }} 
                                         </span>
                                     </td>
                                     <td>

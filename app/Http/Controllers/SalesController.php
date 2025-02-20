@@ -50,6 +50,7 @@ class SalesController extends Controller
 
         // Get paginated results
         $sales = $query->latest()->paginate(50)->withQueryString(); 
+        // return($sales);
         return view('sales.index', [
             'sales' => $sales,
             'salesCount' => $stats['count'],

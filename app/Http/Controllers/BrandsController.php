@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\brands;
 use Illuminate\Http\Request;
+use App\Models\inventory;
 
 class BrandsController extends Controller
 {
@@ -19,8 +20,8 @@ class BrandsController extends Controller
     
     public function index()
     {
-        $brands = brands::orderBy('name')
-            ->paginate(10); 
+        $brands = brands::withCount('products')->orderBy('name')
+            ->paginate(10);  
         return view('brands.index', compact('brands'));
     }
 
